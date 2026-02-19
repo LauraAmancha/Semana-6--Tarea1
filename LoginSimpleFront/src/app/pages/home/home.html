@@ -1,0 +1,15 @@
+<div class="home-container">
+  <div class="welcome-card">
+    <h1>👋 ¡Bienvenido, {{ nombreUsuario }}!</h1>
+    <p class="subtitle">Has iniciado sesión correctamente.</p>
+
+    <div class="info-box">
+      <p>Tu rol en el sistema es:</p>
+      <h3>{{ authService.obtenerRolUsuario() }}</h3>
+    </div>
+
+    <button (click)="salir()" class="logout-btn">
+      Cerrar Sesión 🚪
+    </button>
+  </div>
+</div><p>home works!</p>

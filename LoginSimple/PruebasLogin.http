@@ -1,0 +1,33 @@
+﻿### Variables
+@host = https://localhost:7298
+
+### 1. Prueba de Login Exitoso (Debe dar 200 OK)
+POST {{host}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "correo": "admin@correo.com",
+  "password": "12345"
+}
+
+###
+
+### 2. Prueba de Credenciales Incorrectas (Debe dar 401 Unauthorized)
+POST {{host}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "correo": "admin@correo.com",
+  "password": "MALA"
+}
+
+###
+
+### 3. Prueba de Datos Faltantes (Debe dar 400 Bad Request)
+POST {{host}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "correo": "",
+  "password": ""
+}

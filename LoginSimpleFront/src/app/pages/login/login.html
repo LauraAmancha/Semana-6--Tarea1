@@ -1,0 +1,24 @@
+<div class="login-container">
+  <div class="card">
+    <h2>🔐 Ingreso al Sistema</h2>
+
+    <label>Correo Electrónico:</label>
+    <input [(ngModel)]="correo" type="email" placeholder="admin@correo.com">
+
+    <label>Contraseña:</label>
+    <input [(ngModel)]="password" type="password" placeholder="•••••">
+
+    <button (click)="iniciarSesion()">INGRESAR</button>
+
+    <p *ngIf="mensajeError" class="error">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<style>
+  .login-container { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; font-family: sans-serif; }
+  .card { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+  input { width: 100%; padding: 10px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+  button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+  button:hover { background-color: #0056b3; }
+  .error { color: red; margin-top: 15px; font-size: 0.9em; }
+</style>
